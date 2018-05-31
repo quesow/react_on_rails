@@ -31,10 +31,19 @@ class NewItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <input ref={this.setNameRef} placeholder='Enter the name of the item' />
-        <input ref={this.setDescriptionRef} placeholder='Enter a description' />
-        <button onClick={this.handleClick}>Submit</button>
+      <div className="row justify-content-center">
+        <form>
+          <div className="form-group">
+            <label for="inputName">Name</label>
+            <input ref={this.setNameRef} type="text" className="form-control" id="inputName" placeholder="Enter the name of the item"/>
+            <small id="emailHelp" className="form-text text-muted">No validation added at the moment.</small>
+          </div>
+          <div className="form-group">
+            <label for="inputDescription">Description</label>
+            <input ref={this.setDescriptionRef} type="text" className="form-control" id="inputDescription" placeholder="Enter a description"/>
+          </div>
+          <button type="button" className="btn btn-primary" onClick={this.handleClick}>Submit</button>
+        </form>
       </div>
     );
   }

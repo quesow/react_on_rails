@@ -18,6 +18,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'responders'
 gem 'react-rails'
 gem 'jquery-rails'
+gem 'bootstrap',     '~> 4.1.1'
+gem 'material-sass', '~> 4.1.1'
+gem 'material_icons'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

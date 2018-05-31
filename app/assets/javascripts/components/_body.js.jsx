@@ -58,7 +58,7 @@ class Body extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <NewItem handleSubmit={this.handleSubmit} />
         <AllItems items={this.state.items}
           handleDelete={this.handleDelete}

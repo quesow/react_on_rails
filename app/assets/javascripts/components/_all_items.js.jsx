@@ -24,7 +24,22 @@ class AllItems extends React.Component {
       )
     });
     return (
-        <div>{items}</div>
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Acctions</th>
+            </tr>
+          </thead>
+          <tbody>{items}</tbody>
+        </table>
+      </div>
     )
+    {/*return (
+        <div className="row">{items}</div>
+    )*/}
   }
 }

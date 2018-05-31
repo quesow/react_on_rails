@@ -29,12 +29,17 @@ class Item extends React.Component {
 
   render() {
     return (
-      <div>
-        <Name editable={this.state.editable} name={this.props.item.name} setEditNameRef={this.setEditNameRef}/>
-        <Description editable={this.state.editable} description={this.props.item.description} setEditDescriptionRef={this.setEditDescriptionRef}/>
-        <button editable={this.state.editable} onClick={this.props.handleDelete}>Delete</button>
-        <EditButton editable={this.state.editable} handleEdit={this.handleEdit} />
-      </div>
+      <tr>
+        <th scope="row">{this.props.item.id}</th>
+        <td><Name editable={this.state.editable} name={this.props.item.name} setEditNameRef={this.setEditNameRef}/></td>
+        <td><Description editable={this.state.editable} description={this.props.item.description} setEditDescriptionRef={this.setEditDescriptionRef}/></td>
+        <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button className="btn btn-danger" editable={this.state.editable} onClick={this.props.handleDelete}>Delete</button>
+          <EditButton editable={this.state.editable} handleEdit={this.handleEdit} />
+        </div>
+        </td>
+      </tr>
     );
   }
 }
@@ -42,7 +47,7 @@ class Item extends React.Component {
 const Name = ({editable, name, setEditNameRef}) => (
   editable
   ? <input ref={setEditNameRef} type='text' defaultValue={name} />
-  : <h3>{name}</h3>
+  : <p>{name}</p>
 );
 
 const Description = ({editable, description, setEditDescriptionRef}) => {
@@ -55,7 +60,9 @@ const Description = ({editable, description, setEditDescriptionRef}) => {
 
 const EditButton = ({editable, handleEdit}) => {
   const buttonName = editable ? "Submit" : "Edit";
+  const buttonType = editable ? "success" : "secondary";
+  const className = `btn btn-${buttonType}`;
   return (
-    <button onClick={handleEdit}>{buttonName}</button>
+    <button className={className} onClick={handleEdit}>{buttonName}</button>
   )
 };
