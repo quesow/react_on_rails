@@ -2,6 +2,6 @@
 
 const Header = () => (
     <div>
-      <h1>Hello, World!</h1>
+      <h1>ItemCart App</h1>
     </div>
   );
